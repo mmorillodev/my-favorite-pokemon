@@ -12,7 +12,6 @@
     "@types/node": "^12.20.26",
     "@types/react": "^17.0.24",
     "@types/react-dom": "^17.0.9",
-    "enzyme": "^3.11.0",
     "eslint-import-resolver-typescript": "^2.5.0",
     "react": "^17.0.2",
     "react-cookie": "^4.1.1",
@@ -26,6 +25,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test-nowatch": "react-scripts test --watchAll=false",
+    "test-coverage": "react-scripts test --coverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -47,7 +48,6 @@
     ]
   },
   "devDependencies": {
-    "@types/enzyme": "^3.10.9",
     "@types/styled-components": "^5.1.14",
     "@typescript-eslint/eslint-plugin": "^4.31.2",
     "@typescript-eslint/parser": "^4.31.2",
@@ -60,5 +60,27 @@
     "eslint-plugin-react": "^7.26.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "prettier": "^2.4.1"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.ts",
+      "src/**/*.tsx",
+      "!src/index.tsx",
+      "!src/hooks/*.ts",
+      "!src/context/*.ts",
+      "!src/context/*.tsx"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    },
+    "coverageReporters": [
+      "html",
+      "text"
+    ]
   }
 }
