@@ -1,14 +1,16 @@
-import { shallow } from 'enzyme'
+import { shallow, configure, EnzymeAdapter } from 'enzyme'
 import Todos from './Todos'
 
+configure({ adapter: new EnzymeAdapter() })
+
 describe('<Todos />', () => {
-	let component
+  let component
 
-	beforeEach(() => {
-		component = shallow(<Todos />)
-	})
+  beforeEach(() => {
+    component = shallow(<Todos />)
+  })
 
-	test('It should mount', () => {
-		expect(component.length).toBe(1)
-	})
+  test('It should mount', () => {
+    expect(component.length).toBe(1)
+  })
 })
