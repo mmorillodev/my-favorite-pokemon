@@ -45,3 +45,24 @@ export const CenteredContainer = styled.div`
 export const Clickable = styled.div`
   cursor: pointer;
 `
+
+export const TodoList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0.75rem;
+
+  & li:not(:last-child) {
+    margin-bottom: 8px;
+  }
+`
+
+export const TodoItem = styled.li`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+`
+
+export const TodoLabel = styled.span<{ done?: boolean }>`
+  text-decoration: ${p => (p.done ? 'line-through' : 'none')};
+`

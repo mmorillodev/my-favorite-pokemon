@@ -1,29 +1,14 @@
 import { useCallback } from 'react'
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline'
-import styled from 'styled-components'
 import useTodo from '../../hooks/useTodo'
-import { Button, CenteredContainer, Clickable } from '../../styles/Commons'
-
-const TodoList = styled.ul`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 0.75rem;
-
-  & li:not(:last-child) {
-    margin-bottom: 8px;
-  }
-`
-
-const TodoItem = styled.li`
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-`
-
-const TodoLabel = styled.span<{ done?: boolean }>`
-  text-decoration: ${p => (p.done ? 'line-through' : 'none')};
-`
+import {
+  Button,
+  CenteredContainer,
+  Clickable,
+  TodoItem,
+  TodoLabel,
+  TodoList,
+} from '../../styles/Commons'
 
 const Todos = () => {
   const { todos, setTodos } = useTodo()
