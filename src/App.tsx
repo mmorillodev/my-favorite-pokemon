@@ -1,9 +1,5 @@
 import styled from 'styled-components'
 
-import Todos from './components/Todos/Todos'
-import TodoAdder from './components/TodoAdder/TodoAdder'
-import { TodoContextProvider } from './context/TodoContext'
-
 const CentralizedBox = styled.div`
   width: fit-content;
   margin: 0 auto;
@@ -14,14 +10,7 @@ const CentralizedBox = styled.div`
 `
 
 function App() {
-  return (
-    <CentralizedBox>
-      <TodoContextProvider>
-        <TodoAdder />
-        <Todos />
-      </TodoContextProvider>
-    </CentralizedBox>
-  )
+  return <CentralizedBox>Hello world</CentralizedBox>
 }
 
 export default App
